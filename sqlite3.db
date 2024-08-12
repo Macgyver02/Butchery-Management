@@ -1,0 +1,17 @@
+from yourapp.models import Product
+
+# Create a new product
+product = Product.objects.create(name="Sirloin Steak", description="Prime cut sirloin", price=15.99, stock=50)
+
+# Read products
+all_products = Product.objects.all()
+specific_product = Product.objects.get(id=1)
+
+# Update a product
+product = Product.objects.get(id=1)
+product.price = 16.99
+product.save()
+
+# Delete a product
+product = Product.objects.get(id=1)
+product.delete()
